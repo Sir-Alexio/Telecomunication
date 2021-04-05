@@ -1,6 +1,7 @@
 import Factorial
 import Telecomunication
 import random
+import cycle
 
 size = 100
 

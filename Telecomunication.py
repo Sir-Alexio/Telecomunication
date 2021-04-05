@@ -48,7 +48,9 @@ def maxPower(first, second, situation):
             power = 200
         elif 8 <= i <= 9:
             power = 300
+
         distance = power / (abs(situation[i][0] - first) ** 2 + abs(situation[i][1] - second) ** 2)
+
         if max < distance:
             max = distance
     return max
