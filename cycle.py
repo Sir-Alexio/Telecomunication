@@ -1,15 +1,20 @@
 import Telecomunication
 
-size = 15
 
-area = [[0 for j in range(size)] for i in range(size)]
+def findCoordinats(area):
+    for i in range(len(area)):
+        for j in range(len(area)):
+            if area[i][j] != 0:
+                return i, j
 
-area[2][1] = 555
-area[2][12] = 555
-area[4][12] = 555
-area[4][14] = 555
-area[9][14] = 555
-area[9][1] = 555
-area[2][1] = 555
 
-Telecomunication.output(area)
+def nextPoint(area,xPoint,yPoint):
+    for i in range(len(area)):
+        if area[xPoint][i] !=0 and i!=yPoint:
+            yPoint = i
+            return xPoint,yPoint
+
+    for i in range(len(area)):
+        if area[i][yPoint] !=0 and i!=xPoint:
+            xPoint = i
+            return xPoint,yPoint
