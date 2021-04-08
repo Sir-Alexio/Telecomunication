@@ -1,5 +1,6 @@
 import random
 
+
 def output(list):
     for i in list:
         for j in i:

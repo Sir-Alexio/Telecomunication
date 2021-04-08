@@ -3,6 +3,7 @@ import Telecomunication
 import random
 import cycle
 
+
 size = 100
 
 location = [[0 for j in range(size)] for i in range(size)]  # квадратная область 100*100
