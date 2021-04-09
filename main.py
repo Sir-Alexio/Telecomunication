@@ -23,6 +23,7 @@ print('Колличество абонентов, которые имеют уд
 #Telecomunication.output(powerArea)
 
 #-----------------------------------------------------------------------------------------------------------------------
+
 size = 15
 
 area = [[0 for j in range(size)] for i in range(size)]
@@ -46,9 +47,15 @@ import matplotlib.cbook as cbook
 
 
 fig, ax = plt.subplots()
+size1 = 10
 
-x = [i for i in range(100)]
-y = [i for i in range(100)]
+x = [[j for j in range(size1)] for i in range(size1)]
+y = [[i for j in range(size1)] for i in range(size1)]
 
-plt.plot(x,y,'r')
+
+Telecomunication.makePlot(powerArea,plt)
+
+plt.grid(True)
+
 plt.show()
+

@@ -65,7 +65,17 @@ def countPopulation(population, situation, powerArea):
             if maxPower(i, j, situation, powerArea) > 1: total += population[i][j]
     return total
 
-def makePlot(powerArea):
+
+def makePlot(powerArea, plt):
     for i in range(len(powerArea)):
         for j in range(len(powerArea)):
-            if <powerArea[i][j]
+            if powerArea[i][j] <= 1:
+                plt.plot(i, j, '*c')
+            elif 1 < powerArea[i][j] <= 10:
+                plt.plot(i, j, '*b')
+            elif 10 < powerArea[i][j] <= 30:
+                plt.plot(i, j, '*g')
+            elif 30 < powerArea[i][j] <= 40:
+                plt.plot(i, j, '*y')
+            elif 40 < powerArea[i][j]:
+                plt.plot(i, j, '*r')
