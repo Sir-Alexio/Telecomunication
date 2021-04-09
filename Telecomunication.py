@@ -33,10 +33,10 @@ def inputLocation(location):
         location[first][second] = 3
         situation.append([first, second])
 
-    return situation;
+    return situation
 
 
-def maxPower(first, second, situation):
+def maxPower(first, second, situation, areaPower):
     max = 0
     power = 0
     for i in range(len(situation)):
@@ -50,19 +50,22 @@ def maxPower(first, second, situation):
         elif 8 <= i <= 9:
             power = 300
 
-        distance = power / (abs(situation[i][0] - first) ** 2 + abs(situation[i][1] - second) ** 2)
+        powerPoint = power / (abs(situation[i][0] - first) ** 2 + abs(situation[i][1] - second) ** 2)
 
-        if max < distance:
-            max = distance
+        if max < powerPoint:
+            max = powerPoint
+    areaPower[first][second] = max
     return max
 
 
-def countPopulation(population, situation):
+def countPopulation(population, situation, powerArea):
     total = 0
     for i in range(len(population)):
         for j in range(len(population)):
-            if maxPower(i, j, situation) > 1: total += population[i][j]
+            if maxPower(i, j, situation, powerArea) > 1: total += population[i][j]
     return total
 
-
-
+def makePlot(powerArea):
+    for i in range(len(powerArea)):
+        for j in range(len(powerArea)):
+            if <powerArea[i][j]
