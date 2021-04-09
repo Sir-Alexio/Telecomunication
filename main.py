@@ -1,11 +1,11 @@
-from numpy import arange, sin
 
 import Factorial
 import Telecomunication
 import random
 import cycle
+
 import matplotlib.pyplot as plt
-from numpy import *
+
 
 size = 100
 
@@ -17,16 +17,30 @@ situationOfTelecom = Telecomunication.inputLocation(location)  # хранит к
 
 powerArea = [[0 for j in range(size)] for i in range(size)] # хранит максимальную мощность каждой в каждой клетке
 
-print('Колличество абонентов, которые имеют удовлетворительное качество связи: '+
+print('Колличество абонентов, которые имеют удовлетворительное качество связи:  '+
       str(Telecomunication.countPopulation(population, situationOfTelecom, powerArea)))
 
-#Telecomunication.output(powerArea)
+fig, ax = plt.subplots()  # визуализируем данные
 
-#-----------------------------------------------------------------------------------------------------------------------
+Telecomunication.makePlot(powerArea, plt)
+
+plt.show()
+
+# -----------------------------------------------------------------------------------------------------------------------
 
 size = 15
 
 area = [[0 for j in range(size)] for i in range(size)]
+print("Введите координаты точки")
+#while(True):
+ #   print("x:",end=' ')
+  #  x = input()
+   # print("y:",end=' ')
+    #y = input()
+    #if x or y <0:
+     #   print("Введены неверные данные")
+      #  continue
+    #area[x][y] = 555
 
 area[2][1] = 555
 area[2][12] = 555
@@ -36,26 +50,7 @@ area[9][14] = 555
 area[9][1] = 555
 area[2][1] = 555
 
-# Telecomunication.output(area)
+#Telecomunication.output(area)
 
-# print(cycle.findCoordinats(area))
-
-
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.cbook as cbook
-
-
-fig, ax = plt.subplots()
-size1 = 10
-
-x = [[j for j in range(size1)] for i in range(size1)]
-y = [[i for j in range(size1)] for i in range(size1)]
-
-
-Telecomunication.makePlot(powerArea,plt)
-
-plt.grid(True)
-
-plt.show()
+#print(cycle.printCoordinates(area))
 
